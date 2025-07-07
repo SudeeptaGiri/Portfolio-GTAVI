@@ -1,0 +1,58 @@
+<ng-container *ngIf="!showContent">
+  <div #svgWrapper class="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-[#000]">
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <mask id="viMask">
+          <rect width="100%" height="100%" fill="black" />
+          <g class="vi-mask-group">
+            <text x="50%" y="50%" font-size="250" text-anchor="middle" fill="white" dominant-baseline="middle" font-family="pricedown">
+              SG
+            </text>
+          </g>
+        </mask>
+      </defs>
+      <image href="./assets/bg.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" mask="url(#viMask)" />
+    </svg>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="showContent">
+  <div #main class="main w-full rotate-[-10deg] scale-[1.7] lg:scale-[1.7] md:scale-[1.4] sm:scale-[1.2] scale-[1]">
+    <div class="landing relative overflow-hidden w-full h-screen bg-black">
+      <!-- Navbar -->
+      <div class="navbar absolute top-0 left-0 z-[10] w-full px-4 sm:px-6">
+        <app-menu></app-menu>
+      </div>
+
+      <!-- Animated Background -->
+      <div class="imagesdiv relative w-full h-screen overflow-hidden">
+        <img #sky class="absolute sky top-0 left-0 w-full h-full object-cover scale-[1.5] rotate-[-20deg]" src="./assets/sky.png" alt="" />
+        <img #bg class="absolute bg top-0 left-0 w-full h-full object-cover scale-[1.8] rotate-[-3deg]" src="./assets/bg.png" alt="" />
+
+        <!-- Text -->
+        <div #text class="text absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 scale-[1.4] sm:scale-[1.2] rotate-[-10deg] text-white font-[pricedown] flex flex-col gap-2 sm:gap-3 text-center">
+          <h1 class="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8rem] leading-none sm:-ml-40">Full Stack</h1>
+          <h1 class="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8rem] leading-none sm:ml-20">Software</h1>
+          <h1 class="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8rem] leading-none sm:-ml-40">Engineer</h1>
+        </div>
+
+        <!-- Character -->
+        <img #character class="absolute character left-1/2 -translate-x-1/2 scale-[0.6] md:scale-[0.7] lg:scale-[0.8] -bottom-[100%] sm:-bottom-[80%] rotate-[-20deg]" src="./assets/boybg.webp" alt="boybg" />
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="btmbar absolute bottom-0 left-0 w-full py-10 px-6 bg-gradient-to-t from-black to-transparent text-white">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center gap-4 text-xl">
+            <i class="ri-arrow-down-line text-3xl"></i>
+            <h3 class="font-[pricedown]"><a target="_blank" href="./assets/Sudeepta_Resume.pdf">Resume</a></h3>
+          </div>
+          <div class="flex gap-5 text-center justify-center font-[pricedown] text-lg sm:text-2xl">
+            <a routerLink="/projects">View Projects</a>
+            <a routerLink="/contacts">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

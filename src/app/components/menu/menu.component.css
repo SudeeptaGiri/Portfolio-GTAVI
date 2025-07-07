@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "pricedown";
+    src: url("../../../../public/assets/pricedown.otf");
+  }
+  
+
+  @keyframes scan-line {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-scan-line {
+    animation: scan-line 0.8s ease-out;
+  }
+  

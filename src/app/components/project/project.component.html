@@ -58,13 +58,18 @@
             >
               📝 Code
             </a>
-            <a 
-              *ngIf="selectedProject.liveLink" 
+            <a *ngIf="selectedProject.isLive"  
               [href]="selectedProject.liveLink" 
               target="_blank"
               class="btn-primary"
             >
               🚀 Live Demo
+            </a>
+            <a 
+              *ngIf="!selectedProject.isLive"  
+              class="btn-primary"
+            >
+              🚀 Not Deployed
             </a>
           </div>
         </ng-container>

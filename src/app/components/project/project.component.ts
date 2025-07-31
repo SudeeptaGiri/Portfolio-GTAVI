@@ -14,6 +14,7 @@ interface Project {
   status: 'Completed' | 'In Progress' | 'Planned';
   features: string[];
   challenges?: string[];
+  isLive?: boolean;
 }
 
 @Component({
